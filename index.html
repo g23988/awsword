@@ -4,10 +4,38 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Document</title>
+	<title>AWS Word test</title>
+	<script src="https://unpkg.com/vue/dist/vue.js"></script>
 </head>
 <body>
-	This website is design for aws new word test, you can use this website to practice your aws new word.
-	Let u more easy to pass the AWS english test.
+	<div id="app">
+		<welcome-template></welcome-template>
+	</div>
+
+<div style="display:none;">
+	<div id="welcome-template">
+		<div>
+			<h1>Hello My Friends.</h1>
+			This website is design for aws new word test, you can use this website to practice your aws skill.<br>
+			Let u more easy to pass the AWS english test.<br>
+			<button>start</button><hr>
+
+			This website is design by wei.liu. <br>
+			If you have any advance ,plz let me know. <br>
+			u can contact me with email. <a href="mailto:g23988@gmail.com">g23988@gmail.com</a>
+		</div>
+	</div>
+
+</div>
 </body>
+<script>
+	Vue.component('welcome-template',{
+		template: '#welcome-template',
+	});
+	var app = new Vue({
+		el: '#app',
+		data: {
+		}
+	});
+</script>
 </html>

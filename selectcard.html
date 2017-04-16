@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+select the following collection of cards
+<div id="app">
+	<select-cards v-model="cards_list"></select-cards>
+</div>
+<div style="display:none;">
+	<div id="select-cards">
+		<div>
+			<ul v-for="card in showcards">
+				<li>{{card.name}}</li>
+			</ul>
+		</div>
+	</div>
+</div>
+</body>
+<script>
+	Vue.component('select-cards',{
+		template: '#select-cards',
+		props: {
+			value: {
+				type : Array
+			}
+		},
+		data: function(){
+			return {
+				showcards: []
+			}
+		},
+		watch: {
+			value : function(){
+				this.showcards = this.value;
+			}
+		}
+	});
+	var app = new Vue({
+		el: '#app',
+		data: {
+			cards_list:[{
+				name:'card1'
+			}]
+		}
+	});
+</script>
+</html>
